@@ -91,7 +91,6 @@ export type ProductType = {
   program?: GraphqlProgramType;
   weightTopSales?: number;
   weightForced?: number;
-  priceBand?: Array<PriceBandType>;
   defaultPriceBand?: PriceBandType;
   relatedOffers?: Array<RelatedOfferType>;
   resellers?: OfferResellersType;
@@ -160,6 +159,22 @@ export type MarketingTextType = {
   features?: string;
 };
 
+export type OfferLightType = {
+  identifiers?: IdentifiersType;
+  name?: string;
+  classification?: string;
+  arrowCategories?: Array<string>;
+  isAddon?: boolean;
+  hasAddons?: boolean;
+  environmentAvailability?: string;
+  isEnabled?: boolean;
+  isTrial?: boolean;
+  lastUpdate?: string;
+  arrowSubCategories?: Array<string>;
+  resellers?: OfferResellersType;
+  promotions?: Array<PromotionType>;
+};
+
 export type SaleConstraintsType = {
   customerQualifications?: Array<string>;
   resellerQualifications?: Array<string>;
@@ -199,6 +214,7 @@ export type PriceBandType = {
   isBuyable?: boolean;
   marketplace?: string;
   name?: string;
+  offer?: OfferLightType;
   orderingType?: string;
   prices?: PricesType;
   saleConstraints?: PriceBandSaleConstraintsType;

@@ -1,8 +1,6 @@
 import { AbstractEntity } from '../../abstractEntity';
 import { Item, ItemType } from './item';
 
-export type ItemListType = Array<ItemType>;
-
 export class ItemList extends AbstractEntity<ItemListType> {
   readonly #items: Item[];
 
@@ -20,3 +18,5 @@ export class ItemList extends AbstractEntity<ItemListType> {
     return this.items.map((item) => item.toJSON());
   }
 }
+
+export type ItemListType = Array<ItemType>;
