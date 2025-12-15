@@ -22,6 +22,7 @@ import {
 } from './entities/program';
 import { QuoteType } from './entities/quote';
 import {
+  GraphqlApiReportHistoryType,
   GraphqlApiReportStatusType,
   GraphqlApiReportType,
 } from './entities/report';
@@ -40,6 +41,7 @@ import {
   SelectOneResponseDataSchema,
   SpecialPriceRateSchema,
 } from './graphqlApiSchemas';
+import { SoftwareProductType } from './entities/softwareProduct';
 
 /**
  * For field __args
@@ -182,7 +184,9 @@ export enum SelectDataField {
   PROGRAM_LEVEL_OPTION_GROUP = 'programLevelOptionGroup',
   QUOTE = 'quote',
   REPORT = 'report',
+  REPORT_HISTORY = 'reportHistory',
   REPORT_STATUS = 'reportStatus',
+  SOFTWARE_PRODUCT = 'softwareProduct',
   SPECIAL_PRICE_RATE = 'specialPriceRate',
   STAFF = 'staff',
   SUBSCRIBED_PROGRAM = 'subscribedProgram',
@@ -228,7 +232,9 @@ export type SelectAllResponseDataType = {
   [SelectDataField.PROGRAM_LEVEL_OPTION_GROUP]?: ProgramLevelOptionGroupType[];
   [SelectDataField.QUOTE]?: QuoteType[];
   [SelectDataField.REPORT]?: GraphqlApiReportType[];
+  [SelectDataField.REPORT_HISTORY]?: GraphqlApiReportHistoryType[];
   [SelectDataField.REPORT_STATUS]?: GraphqlApiReportStatusType[];
+  [SelectDataField.SOFTWARE_PRODUCT]?: SoftwareProductType[];
   [SelectDataField.STAFF]?: GraphqlApiStaffType[];
   [SelectDataField.SUBSCRIBED_PROGRAM]?: SubscribedProgramType[];
   [SelectDataField.SUBSCRIPTION]?: SubscriptionType[];
@@ -322,6 +328,7 @@ export type SelectOneResponseDataType = {
   [SelectDataField.PROGRAM_LEVEL_OPTION_GROUP]?: ProgramLevelOptionGroupType;
   [SelectDataField.QUOTE]?: QuoteType;
   [SelectDataField.REPORT]?: GraphqlApiReportType;
+  [SelectDataField.REPORT_HISTORY]?: GraphqlApiReportHistoryType;
   [SelectDataField.REPORT_STATUS]?: GraphqlApiReportStatusType;
   [SelectDataField.STAFF]?: GraphqlApiStaffType;
   [SelectDataField.SUBSCRIBED_PROGRAM]?: SubscribedProgramType;

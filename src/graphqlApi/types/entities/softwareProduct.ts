@@ -1,3 +1,5 @@
+import { CurrencyType } from './currency';
+
 export type SoftwareProductType = {
   id?: string;
   companyId?: number;
@@ -14,4 +16,18 @@ export type SoftwareProductType = {
   unitSymbol?: string;
   unitIfUsernoshow?: string;
   priority?: number;
+};
+
+export type SoftwareProductType1 = {
+  id?: number;
+  arrowSku?: string;
+  sku?: string;
+  name?: string;
+  version?: string;
+  buyPrice?: number;
+  sellPrice?: number;
+  dateStart?: string;
+  dateEnd?: string;
+  buyCurrency?: CurrencyType;
+  sellCurrency?: CurrencyType;
 };
