@@ -52,6 +52,7 @@ import {
 import { QuoteVersion } from './entities/quoteVersion';
 import { Comment } from './entities/comment';
 import {
+  GraphqlApiReportHistoryType,
   GraphqlApiReportItemType,
   GraphqlApiReportStatusType,
   GraphqlApiReportType,
@@ -203,6 +204,8 @@ export type ReportSchema = Merge<
   MissingFieldsOfReportSchema
 >;
 
+export type ReportHistorySchema = Schema<GraphqlApiReportHistoryType, boolean>;
+
 export type ReportItemSchema = Schema<GraphqlApiReportItemType, boolean>;
 
 export type EndCustomerSchema = Merge<
@@ -341,6 +344,7 @@ export type SelectAllResponseDataSchema = {
   [SelectDataField.PROGRAM_LEVEL_OPTION_GROUP]?: ProgramLevelOptionGroupSchema;
   [SelectDataField.QUOTE]?: QuoteSchema;
   [SelectDataField.REPORT]?: ReportSchema;
+  [SelectDataField.REPORT_HISTORY]?: ReportHistorySchema;
   [SelectDataField.REPORT_STATUS]?: ReportStatusSchema;
   [SelectDataField.STAFF]?: GraphqlApiStaffSchema;
   [SelectDataField.SUBSCRIBED_PROGRAM]?: SubscribedProgramSchema;
