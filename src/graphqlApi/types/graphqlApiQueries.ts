@@ -41,7 +41,6 @@ import {
   SelectOneResponseDataSchema,
   SpecialPriceRateSchema,
 } from './graphqlApiSchemas';
-import { SoftwareProductType } from './entities/softwareProduct';
 
 /**
  * For field __args
@@ -186,7 +185,6 @@ export enum SelectDataField {
   REPORT = 'report',
   REPORT_HISTORY = 'reportHistory',
   REPORT_STATUS = 'reportStatus',
-  SOFTWARE_PRODUCT = 'softwareProduct',
   SPECIAL_PRICE_RATE = 'specialPriceRate',
   STAFF = 'staff',
   SUBSCRIBED_PROGRAM = 'subscribedProgram',

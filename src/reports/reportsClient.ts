@@ -4,6 +4,7 @@ import { DataListReports } from './entities/dataListReports';
 import { ReportReferenceLink } from './entities/reportReferenceLink';
 import { ReferenceType } from './entities/reference';
 import { ReportValidationReference } from './entities/reportValidationReference';
+import { ReportPlan } from './entities/reportPlan';
 
 export enum CreateReportInputFields {
   COLUMN_PRODUCTS = 'products',
@@ -91,5 +92,14 @@ export class ReportsClient extends AbstractRestfulClient {
     this.path = `/${reportReference}`;
 
     return await this.delete(parameters);
+  }
+
+  public async getReportPlan(
+    reportReference: string,
+    parameters: Parameters = {},
+  ): Promise<GetResult<ReportPlan>> {
+    this.path = `/${reportReference}/plan`;
+
+    return new GetResult(ReportPlan, await this.get(parameters));
   }
 }
